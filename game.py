@@ -35,7 +35,7 @@ class Game:
         while True:
             self.display.fill((64,224,208))
             self.tilemap.render(self.display)
-            self.player.update((self.movement[1] - self.movement[0], 0))
+            self.player.update(self.tilemap, (self.movement[1] - self.movement[0], 0))
             self.player.render(self.display)
 
             for event in pygame.event.get():
@@ -43,14 +43,14 @@ class Game:
                     pygame.quit()
                     sys.exit()
                 if event.type == pygame.KEYDOWN:
-                    if event.key == pygame.K_a:
+                    if event.key == pygame.K_LEFT:
                         self.movement[0] = True
-                    if event.key == pygame.K_d:
+                    if event.key == pygame.K_RIGHT:
                         self.movement[1] = True
                 if event.type == pygame.KEYUP:
-                    if event.key == pygame.K_a:
+                    if event.key == pygame.K_LEFT:
                         self.movement[0] = False
-                    if event.key == pygame.K_d:
+                    if event.key == pygame.K_RIGHT:
                         self.movement[1] = False
 
             self.screen.blit(pygame.transform.scale(self.display, (640,480)), (0,0))
@@ -58,5 +58,4 @@ class Game:
             self.clock.tick(60)
 
 Game().run()
-
 
