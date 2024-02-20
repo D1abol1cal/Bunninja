@@ -15,6 +15,9 @@ class Game:
         self.screen = pygame.display.set_mode((640,480))
         self.display = pygame.Surface((320,240))
         self.clock = pygame.time.Clock()
+        self.icon = pygame.image.load('data/images/icon.jpg').convert()
+
+        pygame.display.set_icon(self.icon)
 
 
       
