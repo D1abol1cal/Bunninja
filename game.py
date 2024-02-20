@@ -1,39 +1,47 @@
 import pygame
 import sys
 
-
-
+from Scripts.entities import PhysicsEntity
+from Scripts.utils import load_image
 class Game:
     def __init__(self):
+
+        #game init
         pygame.init()
         pygame.display.set_caption('Bunninja')
 
         self.screen = pygame.display.set_mode((640,480))
         self.clock = pygame.time.Clock()
 
-        self.img = pygame.image.load('C:/Users/syedn/OneDrive/Desktop/Bunninja/data/images/clouds/cloud_1.png')
-        self.img.set_colorkey((0,0,0))
-        self.img_pos = [160,260]
+
+      
         self.movement = [False, False]
+        self.assets = {
+            'player': load_image('entities/player.png')
+        }
+
+        self.player = PhysicsEntity(self, 'player', (50,50), (8,15))
 
     def run(self):
         while True:
-            self.screen.fill((255,255,255))
-            self.img_pos[1] += (self.movement[1] - self.movement[0]) * 5
-            self.screen.blit(self.img, self.img_pos)
+            self.screen.fill((64,224,208))
+
+            self.player.update((self.movement[1] - self.movement[0], 0))
+            self.player.render(self.screen)
+
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     pygame.quit()
                     sys.exit()
                 if event.type == pygame.KEYDOWN:
-                    if event.key == pygame.K_w:
+                    if event.key == pygame.K_a:
                         self.movement[0] = True
-                    if event.key == pygame.K_s:
+                    if event.key == pygame.K_d:
                         self.movement[1] = True
                 if event.type == pygame.KEYUP:
-                    if event.key == pygame.K_w:
+                    if event.key == pygame.K_a:
                         self.movement[0] = False
-                    if event.key == pygame.K_s:
+                    if event.key == pygame.K_d:
                         self.movement[1] = False
 
             pygame.display.update()
