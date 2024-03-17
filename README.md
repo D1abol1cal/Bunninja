@@ -21,3 +21,4 @@ Bunninja is a 2D pixel art platformer game written in Python. Join Bunninja on a
 Arrow Keys: Movement (Upward Arrow key to Jump)
 X Key: Ninja Dash Attack
 
+![alt text](<Game ScreenShots/SS.png>)
