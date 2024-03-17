@@ -15,7 +15,7 @@ Bunninja is a 2D pixel art platformer game written in Python. Join Bunninja on a
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/Bunninja.git
+   git clone https://github.com/D1abol1cal/Bunninja.git
 
 # Controls
 Arrow Keys: Movement (Upward Arrow key to Jump)
