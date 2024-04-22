@@ -18,8 +18,10 @@ Bunninja is a 2D pixel art platformer game written in Python. Join Bunninja on a
    git clone https://github.com/D1abol1cal/Bunninja.git
 
 # Controls
-Arrow Keys: Movement (Upward Arrow key to Jump)
-X Key: Ninja Dash Attack
+Arrow Keys: Movement (Upward Arrow key to Jump)  
+
+X Key: Ninja Dash Attack  
+
 Tip : When you jump onto a wall your character has the ability to latch on for a limited time, during that time you can jump again in the opposite direction. Using this technique you can traverse a tall pair of structures by wall jumping between them
 
 ![alt text](<Game ScreenShots/SS.png>)
